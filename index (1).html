@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме — Күсайынов Ғани Талғатұлы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .resume-card {
+            max-width: 960px;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+
+        /* Левая колонка */
+        .sidebar {
+            background: #1e2a38;
+            color: #ecf0f1;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .photo-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1rem auto;
+            border: 4px solid #5d6d7e;
+            background-color: #5d6d7e;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .name-sidebar {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            color: white;
+            margin-bottom: 0.2rem;
+        }
+
+        .title-sidebar {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #bdc3c7;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .info-block h3 {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #5d6d7e;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .info-item {
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
+        }
+
+        .info-item span {
+            display: block;
+            color: #bdc3c7;
+            font-size: 0.8rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #2c3e50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #ecf0f1;
+        }
+
+        /* Правая колонка */
+        .main-content {
+            padding: 2.5rem 2.5rem;
+            background: white;
+        }
+
+        .section {
+            margin-bottom: 2.2rem;
+        }
+
+        .section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e2a38;
+            border-bottom: 2px solid #e0e6ed;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h2 i {
+            color: #1e2a38;
+            font-size: 1.2rem;
+        }
+
+        .job {
+            margin-bottom: 1.4rem;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.4rem;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #2c3e50;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            background: #f0f3f7;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .job-company {
+            font-weight: 500;
+            color: #34495e;
+            margin-bottom: 0.6rem;
+        }
+
+        ul.duties {
+            padding-left: 1.4rem;
+            list-style-type: disc;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        ul.duties li {
+            margin-bottom: 0.4rem;
+        }
+
+        .education-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .edu-school {
+            color: #34495e;
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+        }
+
+        .tech-tag {
+            background: #eef2f5;
+            color: #2c3e50;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 750px) {
+            .resume-card {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-card">
+        <!-- Левая колонка (сайдбар) -->
+        <aside class="sidebar">
+            <div>
+                <div class="photo-container">
+                    <!-- ЗАМЕНИТЕ photo.jpg на ваше фото -->
+                    <img src="photo.jpg" alt="Фото Ғани Күсайынов">
+                </div>
+                <div class="name-sidebar">Ғани<br>Күсайынов</div>
+                <div class="title-sidebar">Специалист по информационным системам</div>
+            </div>
+
+            <div class="info-block">
+                <h3>Контакты</h3>
+                <div class="info-item">
+                    <span>Дата рождения</span>
+                    02.02.2002
+                </div>
+                <div class="info-item">
+                    <span>Город</span>
+                    Усть-Каменогорск, Казахстан
+                </div>
+                <div class="info-item">
+                    <span>Телефон</span>
+                    +7 (XXX) XXX-XX-XX
+                </div>
+                <div class="info-item">
+                    <span>Email</span>
+                    ваш.email@domain.kz
+                </div>
+                <div class="info-item">
+                    <span>LinkedIn</span>
+                    linkedin.com/in/ваш-профиль
+                </div>
+                <div class="info-item">
+                    <span>GitHub</span>
+                    github.com/GansProg
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h3>Языки</h3>
+                <p>🇰🇿 Казахский – родной<br>
+                   🇷🇺 Русский – свободный<br>
+                   🇬🇧 Английский – базовый технический</p>
+            </div>
+
+            <div class="info-block">
+                <h3>Личные качества</h3>
+                <p>Ответственность, высокая обучаемость, техническое мышление, умение работать с нестандартными задачами</p>
+            </div>
+        </aside>
+
+        <!-- Правая колонка (основная информация) -->
+        <main class="main-content">
+            <section class="section">
+                <h2>🎯 Цель</h2>
+                <p>Занятие позиции IT-специалиста или инженера по сопровождению информационных систем, где я смогу применить знания в области мехатроники, веб-администрирования и образовательных IT-решений, а также развиваться в направлении робототехники и автоматизации.</p>
+            </section>
+
+            <section class="section">
+                <h2>💼 Опыт работы</h2>
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Специалист отдела ИТ</span>
+                        <span class="job-date">Авг 2023 — настоящее время (3 года)</span>
+                    </div>
+                    <div class="job-company">ВКУ им. С. Аманжолова</div>
+                    <ul class="duties">
+                        <li><strong>Веб-администрирование:</strong> полное сопровождение главного сайта вуза на WordPress — дизайн, контент, стабильность.</li>
+                        <li><strong>СКУД:</strong> выпуск и обслуживание электронных пропусков (турникетные карты), техподдержка.</li>
+                        <li><strong>Platonus:</strong> участие во внедрении системы автоматизации учебного процесса, настройка и обучение пользователей.</li>
+                        <li><strong>Робототехника:</strong> настройка, тестирование и демонстрация робота Unitree GO2 на мероприятиях.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🎓 Образование</h2>
+                <div class="education-item">
+                    <div class="edu-degree">Магистратура, Информатика (7М01501)</div>
+                    <div class="edu-school">ВКУ им. С. Аманжолова</div>
+                    <div class="edu-date">2023 – 2025</div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-degree">Бакалавриат, Компьютерная мехатроника (6В06103)</div>
+                    <div class="edu-school">ВКУ им. С. Аманжолова</div>
+                    <div class="edu-date">2019 – 2023</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🛠 Ключевые навыки</h2>
+                <div class="tag-list">
+                    <span class="tech-tag">WordPress</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">СКУД / RFID-карты</span>
+                    <span class="tech-tag">Platonus</span>
+                    <span class="tech-tag">Unitree GO2</span>
+                    <span class="tech-tag">Мехатроника</span>
+                    <span class="tech-tag">Техподдержка</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🌐 Дополнительно</h2>
+                <ul class="duties">
+                    <li>Опыт публичных демонстраций робота на университетских мероприятиях.</li>
+                    <li>Готов предоставить портфолио доработанных страниц сайта.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
