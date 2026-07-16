@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме — Кусаинов Ғани Талғатұлы</title>
+    <title data-ru="Резюме — Кусаинов Ғани Талғатұлы" data-kk="Түйіндеме — Кусаинов Ғани Талғатұлы">Резюме — Кусаинов Ғани Талғатұлы</title>
     <style>
         * {
             margin: 0;
@@ -30,6 +30,37 @@
             overflow: hidden;
             display: grid;
             grid-template-columns: 300px 1fr;
+            position: relative;
+        }
+
+        /* Переключатель языка */
+        .lang-switcher {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10;
+            display: flex;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 0.25rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .lang-switcher button {
+            border: none;
+            background: transparent;
+            color: #ecf0f1;
+            padding: 0.35rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .lang-switcher button.active {
+            background: #ecf0f1;
+            color: #1e2a38;
         }
 
         /* Левая колонка */
@@ -40,6 +71,7 @@
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
+            position: relative;
         }
 
         .photo-container {
@@ -133,11 +165,6 @@
             gap: 0.5rem;
         }
 
-        .section h2 i {
-            color: #1e2a38;
-            font-size: 1.2rem;
-        }
-
         .job {
             margin-bottom: 1.4rem;
         }
@@ -222,6 +249,12 @@
             .sidebar {
                 text-align: center;
             }
+            .lang-switcher {
+                position: static;
+                justify-content: center;
+                margin-bottom: 1rem;
+                background: rgba(255,255,255,0.15);
+            }
         }
     </style>
 </head>
@@ -229,112 +262,145 @@
     <div class="resume-card">
         <!-- Левая колонка (сайдбар) -->
         <aside class="sidebar">
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" data-lang="ru" onclick="setLang('ru')">RU</button>
+                <button type="button" class="lang-btn" data-lang="kk" onclick="setLang('kk')">ҚАЗ</button>
+            </div>
             <div>
                 <div class="photo-container">
-                    <!-- ЗАМЕНИТЕ photo.jpg на ваше фото -->
                     <img src="https://github.com/GansProg/resume1/blob/main/WhatsApp%20Image%202026-07-10%20at%2014.27.34.jpeg?raw=true" alt="Фото">
                 </div>
                 <div class="name-sidebar">Ғани<br>Кусаинов</div>
-                <div class="title-sidebar">Специалист по информационным системам</div>
+                <div class="title-sidebar" data-ru="Специалист по информационным системам" data-kk="Ақпараттық жүйелер маманы">Специалист по информационным системам</div>
             </div>
 
             <div class="info-block">
-                <h3>Контакты</h3>
+                <h3 data-ru="Контакты" data-kk="Байланыс">Контакты</h3>
                 <div class="info-item">
-                    <span>Дата рождения</span>
+                    <span data-ru="Дата рождения" data-kk="Туған күні">Дата рождения</span>
                     02.02.2002
                 </div>
                 <div class="info-item">
-                    <span>Город</span>
-                    Талдыкорган, Казахстан
+                    <span data-ru="Город" data-kk="Қала">Город</span>
+                    <span data-ru="Талдыкорган, Казахстан" data-kk="Талдықорған, Қазақстан">Талдыкорган, Казахстан</span>
                 </div>
                 <div class="info-item">
-                    <span>Телефон</span>
+                    <span data-ru="Телефон" data-kk="Телефон">Телефон</span>
                     +7 (747) 323-35-66
                 </div>
                 <div class="info-item">
-                    <span>Email</span>
+                    <span data-ru="Email" data-kk="Email">Email</span>
                     ganikusainov@yandex.com
                 </div>
                 <div class="info-item">
-                    <span>GitHub</span>
+                    <span data-ru="GitHub" data-kk="GitHub">GitHub</span>
                     github.com/GansProg
                 </div>
             </div>
 
             <div class="info-block">
-                <h3>Языки</h3>
-                <p>🇰🇿 Казахский – родной<br>
+                <h3 data-ru="Языки" data-kk="Тілдер">Языки</h3>
+                <p data-ru="🇰🇿 Казахский – родной<br>🇷🇺 Русский – свободный<br>🇬🇧 Английский – базовый технический" data-kk="🇰🇿 Қазақ тілі – ана тілі<br>🇷🇺 Орыс тілі – еркін<br>🇬🇧 Ағылшын тілі – негізгі техникалық">🇰🇿 Казахский – родной<br>
                    🇷🇺 Русский – свободный<br>
                    🇬🇧 Английский – базовый технический</p>
             </div>
 
             <div class="info-block">
-                <h3>Личные качества</h3>
-                <p>Ответственность, высокая обучаемость, техническое мышление, умение работать с нестандартными задачами</p>
+                <h3 data-ru="Личные качества" data-kk="Жеке қасиеттер">Личные качества</h3>
+                <p data-ru="Ответственность, высокая обучаемость, техническое мышление, умение работать с нестандартными задачами" data-kk="Жауапкершілік, жоғары оқуға қабілеттілік, техникалық ойлау, стандартты емес тапсырмалармен жұмыс істей білу">Ответственность, высокая обучаемость, техническое мышление, умение работать с нестандартными задачами</p>
             </div>
         </aside>
 
         <!-- Правая колонка (основная информация) -->
         <main class="main-content">
             <section class="section">
-                <h2>Цель</h2>
-                <p>Занятие позиции IT-специалиста или инженера по сопровождению информационных систем, где я смогу применить знания в области мехатроники, веб-администрирования и образовательных IT-решений, а также развиваться в направлении робототехники и автоматизации.</p>
+                <h2 data-ru="Цель" data-kk="Мақсат">Цель</h2>
+                <p data-ru="Занятие позиции IT-специалиста или инженера по сопровождению информационных систем, где я смогу применить знания в области мехатроники, веб-администрирования и образовательных IT-решений, а также развиваться в направлении робототехники и автоматизации." data-kk="Ақпараттық жүйелерді сүйемелдеу бойынша IT-маман немесе инженер лауазымын атқару, мұнда мехатроника, веб-әкімшілендіру және білім беру IT-шешімдері саласындағы білімімді қолдана аламын, сондай-ақ робототехника мен автоматтандыру бағытында дамимын.">Занятие позиции IT-специалиста или инженера по сопровождению информационных систем, где я смогу применить знания в области мехатроники, веб-администрирования и образовательных IT-решений, а также развиваться в направлении робототехники и автоматизации.</p>
             </section>
 
             <section class="section">
-                <h2>Опыт работы</h2>
+                <h2 data-ru="Опыт работы" data-kk="Жұмыс тәжірибесі">Опыт работы</h2>
                 <div class="job">
                     <div class="job-header">
-                        <span class="job-title">Специалист отдела ИТ</span>
-                        <span class="job-date">Авг 2023 — настоящее время (3 года)</span>
+                        <span class="job-title" data-ru="Специалист отдела ИТ" data-kk="АТ бөлімінің маманы">Специалист отдела ИТ</span>
+                        <span class="job-date" data-ru="Авг 2023 — настоящее время (3 года)" data-kk="2023 ж. тамыз — қазіргі уақыт (3 жыл)">Авг 2023 — настоящее время (3 года)</span>
                     </div>
-                    <div class="job-company">ВКУ им. С. Аманжолова</div>
+                    <div class="job-company" data-ru="ВКУ им. С. Аманжолова" data-kk="С.Аманжолов атындағы ШҚУ">ВКУ им. С. Аманжолова</div>
                     <ul class="duties">
-                        <li><strong>Веб-администрирование:</strong> полное сопровождение главного сайта вуза на WordPress — дизайн, контент, стабильность.</li>
-                        <li><strong>СКУД:</strong> выпуск и обслуживание электронных пропусков (турникетные карты), техподдержка.</li>
-                        <li><strong>Platonus:</strong> участие во внедрении системы автоматизации учебного процесса, настройка и обучение пользователей.</li>
-                        <li><strong>Робототехника:</strong> настройка, тестирование и демонстрация робота Unitree GO2 на мероприятиях.</li>
+                        <li data-ru="<strong>Веб-администрирование:</strong> полное сопровождение главного сайта вуза на WordPress — дизайн, контент, стабильность." data-kk="<strong>Веб-әкімшілендіру:</strong> университеттің басты сайтын WordPress платформасында толық сүйемелдеу — дизайн, контент, тұрақтылық."><strong>Веб-администрирование:</strong> полное сопровождение главного сайта вуза на WordPress — дизайн, контент, стабильность.</li>
+                        <li data-ru="<strong>СКУД:</strong> выпуск и обслуживание электронных пропусков (турникетные карты), техподдержка." data-kk="<strong>ККБЖ (СКУД):</strong> электрондық өткізу карталарын (турникет карталары) шығару және қызмет көрсету, техникалық қолдау."><strong>СКУД:</strong> выпуск и обслуживание электронных пропусков (турникетные карты), техподдержка.</li>
+                        <li data-ru="<strong>Platonus:</strong> участие во внедрении системы автоматизации учебного процесса, настройка и обучение пользователей." data-kk="<strong>Платонус:</strong> оқу үдерісін автоматтандыру жүйесін енгізуге қатысу, баптау және пайдаланушыларды оқыту."><strong>Platonus:</strong> участие во внедрении системы автоматизации учебного процесса, настройка и обучение пользователей.</li>
+                        <li data-ru="<strong>Робототехника:</strong> настройка, тестирование и демонстрация робота Unitree GO2 на мероприятиях." data-kk="<strong>Робототехника:</strong> Unitree GO2 роботын баптау, тестілеу және іс-шараларда көрсету."><strong>Робототехника:</strong> настройка, тестирование и демонстрация робота Unitree GO2 на мероприятиях.</li>
                     </ul>
                 </div>
             </section>
 
             <section class="section">
-                <h2>🎓 Образование</h2>
+                <h2 data-ru="🎓 Образование" data-kk="🎓 Білім">🎓 Образование</h2>
                 <div class="education-item">
-                    <div class="edu-degree">Магистратура, Информатика (7М01501)</div>
-                    <div class="edu-school">ВКУ им. С. Аманжолова</div>
+                    <div class="edu-degree" data-ru="Магистратура, Информатика (7М01501)" data-kk="Магистратура, Информатика (7М01501)">Магистратура, Информатика (7М01501)</div>
+                    <div class="edu-school" data-ru="ВКУ им. С. Аманжолова" data-kk="С.Аманжолов атындағы ШҚУ">ВКУ им. С. Аманжолова</div>
                     <div class="edu-date">2024 – 2026</div>
                 </div>
                 <div class="education-item">
-                    <div class="edu-degree">Бакалавриат, Компьютерная мехатроника (6В06103)</div>
-                    <div class="edu-school">ВКУ им. С. Аманжолова</div>
+                    <div class="edu-degree" data-ru="Бакалавриат, Компьютерная мехатроника (6В06103)" data-kk="Бакалавриат, Компьютерлік мехатроника (6В06103)">Бакалавриат, Компьютерная мехатроника (6В06103)</div>
+                    <div class="edu-school" data-ru="ВКУ им. С. Аманжолова" data-kk="С.Аманжолов атындағы ШҚУ">ВКУ им. С. Аманжолова</div>
                     <div class="edu-date">2019 – 2023</div>
                 </div>
             </section>
 
             <section class="section">
-                <h2>🛠 Ключевые навыки</h2>
+                <h2 data-ru="🛠 Ключевые навыки" data-kk="🛠 Негізгі дағдылар">🛠 Ключевые навыки</h2>
                 <div class="tag-list">
                     <span class="tech-tag">WordPress</span>
                     <span class="tech-tag">HTML/CSS</span>
-                    <span class="tech-tag">СКУД / RFID-карты</span>
+                    <span class="tech-tag" data-ru="СКУД / RFID-карты" data-kk="ККБЖ / RFID-карталар">СКУД / RFID-карты</span>
                     <span class="tech-tag">Platonus</span>
                     <span class="tech-tag">Unitree GO2</span>
-                    <span class="tech-tag">Мехатроника</span>
-                    <span class="tech-tag">Техподдержка</span>
+                    <span class="tech-tag" data-ru="Мехатроника" data-kk="Мехатроника">Мехатроника</span>
+                    <span class="tech-tag" data-ru="Техподдержка" data-kk="Техникалық қолдау">Техподдержка</span>
                     <span class="tech-tag">Low-coding</span>
                 </div>
             </section>
 
             <section class="section">
-                <h2>🌐 Дополнительно</h2>
+                <h2 data-ru="🌐 Дополнительно" data-kk="🌐 Қосымша">🌐 Дополнительно</h2>
                 <ul class="duties">
-                    <li>Опыт публичных демонстраций робота на университетских мероприятиях.</li>
-                    <li>Готов предоставить портфолио доработанных страниц сайта.</li>
+                    <li data-ru="Опыт публичных демонстраций робота на университетских мероприятиях." data-kk="Университет іс-шараларында роботты жария көрсету тәжірибесі.">Опыт публичных демонстраций робота на университетских мероприятиях.</li>
+                    <li data-ru="Готов предоставить портфолио доработанных страниц сайта." data-kk="Сайттың жетілдірілген беттерінің портфолиосын ұсынуға дайынмын.">Готов предоставить портфолио доработанных страниц сайта.</li>
                 </ul>
             </section>
         </main>
     </div>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-ru]').forEach(function (el) {
+                var value = lang === 'kk' ? el.getAttribute('data-kk') : el.getAttribute('data-ru');
+                if (value === null) return;
+                el.innerHTML = value;
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            try {
+                localStorage.setItem('resumeLang', lang);
+            } catch (e) {
+                /* localStorage может быть недоступен — не критично */
+            }
+        }
+
+        (function () {
+            var saved = 'ru';
+            try {
+                saved = localStorage.getItem('resumeLang') || 'ru';
+            } catch (e) {}
+            setLang(saved);
+        })();
+    </script>
 </body>
 </html>
